@@ -1,0 +1,53 @@
+
+{
+  "entities": {
+    "Scan": {
+      "title": "Scan",
+      "description": "A record of a forensic image analysis.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The UID of the user who performed the scan."
+        },
+        "filename": {
+          "type": "string",
+          "description": "The original name of the uploaded file."
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL of the image stored in Firebase Storage."
+        },
+        "result": {
+          "type": "string",
+          "enum": ["Real", "Fake"],
+          "description": "The AI detection result."
+        },
+        "confidence": {
+          "type": "number",
+          "description": "The confidence score of the analysis."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Verified", "Modified", "Fake", "Unverified"],
+          "description": "The final forensic status."
+        },
+        "timestamp": {
+          "type": "object",
+          "description": "Firestore server timestamp."
+        }
+      },
+      "required": ["userId", "filename", "imageUrl", "result", "confidence", "status", "timestamp"]
+    }
+  },
+  "auth": {
+    "providers": ["google.com"]
+  },
+  "firestore": {
+    "/scans/{scanId}": {
+      "schema": "Scan",
+      "description": "Collection of forensic image scans."
+    }
+  }
+}

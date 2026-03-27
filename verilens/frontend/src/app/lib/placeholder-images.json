@@ -1,0 +1,22 @@
+{
+  "placeholderImages": [
+    {
+      "id": "similar-1",
+      "description": "Historical archive match for facial mapping comparison.",
+      "imageUrl": "https://picsum.photos/seed/hist1/400/300",
+      "imageHint": "portrait forensic"
+    },
+    {
+      "id": "similar-2",
+      "description": "Pixel consistency check from original source metadata.",
+      "imageUrl": "https://picsum.photos/seed/hist2/400/300",
+      "imageHint": "digital noise"
+    },
+    {
+      "id": "similar-3",
+      "description": "Lighting vector analysis from known environmental reference.",
+      "imageUrl": "https://picsum.photos/seed/hist3/400/300",
+      "imageHint": "studio lighting"
+    }
+  ]
+}
